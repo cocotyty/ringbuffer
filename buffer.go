@@ -33,6 +33,14 @@ func New(exp uint32) *RingBuffer {
 	return rb
 }
 
+func NewBySize(size uint32) *RingBuffer {
+	size = round(size)
+	rb := &RingBuffer{ring: make([]*Element, size), committed: make([]uint64, size)}
+	rb.committed[0] -= 1
+	rb.mask = size - 1
+	return rb
+}
+
 func round(v uint32) uint32 {
 	v--
 	v |= v >> 1

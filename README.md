@@ -36,20 +36,19 @@ func main() {
 ```
 
 ## Performance
-48 core cpu.
 ```
-goos: linux
+oos: linux
 goarch: amd64
 pkg: github.com/cocotyty/ringbuffer
-cpu: Intel(R) Xeon(R) Gold 6271C CPU @ 2.60GHz
+cpu: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
 BenchmarkConsume
-BenchmarkConsume-48     	 2074874	       557.1 ns/op
+BenchmarkConsume-36     	 2507324	       503.2 ns/op
 BenchmarkPConsume
-BenchmarkPConsume-48    	 1000000	      1138 ns/op
+BenchmarkPConsume-36    	 1000000	      1060 ns/op
 BenchmarkChannel
-BenchmarkChannel-48     	  975303	      1232 ns/op
+BenchmarkChannel-36     	 1019973	      1320 ns/op
 BenchmarkPChannel
-BenchmarkPChannel-48    	  780142	      1659 ns/op
+BenchmarkPChannel-36    	  699348	      2011 ns/op
 PASS
-ok  	github.com/cocotyty/ringbuffer	6.889s
+ok  	github.com/cocotyty/ringbuffer	7.720s
 ```

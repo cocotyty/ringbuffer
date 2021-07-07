@@ -9,7 +9,7 @@ const Parallelism = 200
 const BufferSize = 65536
 
 func BenchmarkConsume(b *testing.B) {
-	rb := New(BufferSize)
+	rb := NewBySize(BufferSize)
 	b.SetParallelism(Parallelism)
 	total := 0
 	go func() {
@@ -35,7 +35,7 @@ func BenchmarkConsume(b *testing.B) {
 }
 
 func BenchmarkPConsume(b *testing.B) {
-	rb := New(BufferSize)
+	rb := NewBySize(BufferSize)
 	total := 0
 	for i := 0; i < runtime.NumCPU()*Parallelism; i++ {
 		go func() {
